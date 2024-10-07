@@ -403,6 +403,10 @@ bool DomainDecomposition::findDecomposition(unsigned int nranks,
                 }
             }
         }
+        
+    //nx = nx;
+   // ny = ny * nz;
+    //nz = 1;
 
     return found_decomposition;
     }
