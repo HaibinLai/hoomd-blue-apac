@@ -121,7 +121,12 @@ class EvaluatorPairLJ
             auto sigma(v["sigma"].cast<Scalar>());
             auto epsilon(v["epsilon"].cast<Scalar>());
 
-            sigma_6 = sigma * sigma * sigma * sigma * sigma * sigma;
+            //sigma_6 = sigma * sigma * sigma * sigma * sigma * sigma;
+
+			auto sigma_2 = sigma * sigma;
+	        auto sigma_4 = sigma_2 * sigma_2;
+		    sigma_6 = sigma_4 * sigma_2;
+
             epsilon_x_4 = Scalar(4.0) * epsilon;
 
             // parameters used in implementation
@@ -132,10 +137,14 @@ class EvaluatorPairLJ
             // - > lj2 = epsilon_x_4 * sigma_6
             }
 
-        // this constructor facilitates unit testing
+        // this constructor facilitates unit testingmake
         param_type(Scalar sigma, Scalar epsilon, bool managed = false)
             {
-            sigma_6 = sigma * sigma * sigma * sigma * sigma * sigma;
+            //sigma_6 = sigma * sigma * sigma * sigma * sigma * sigma;
+			auto sigma_2 = sigma * sigma;
+	        auto sigma_4 = sigma_2 * sigma_2;
+		    sigma_6 = sigma_4 * sigma_2;
+
             epsilon_x_4 = Scalar(4.0) * epsilon;
             }
 

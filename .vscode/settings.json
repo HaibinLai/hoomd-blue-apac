@@ -47,5 +47,8 @@
     "cSpell.enableFiletypes": [
         "cuda"
     ],
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "limits": "cpp"
+    }
 }
